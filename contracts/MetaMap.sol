@@ -199,7 +199,7 @@ contract MetaMap is Owned {
      *     3. content (zeronet metadata)
      */
     function calcDataId(
-        bytes _originDataId,
+        bytes32 _originDataId,
         string _resourceId
     ) external view returns (
         bytes32 dataId
@@ -267,7 +267,7 @@ contract MetaMap is Owned {
     ) {
         /* Calculate data id. */
         bytes32 dataId = keccak256(abi.encodePacked(
-            _NAMESPACE, '.torrrent.', _infoHash));
+            _NAMESPACE, '.torrent.', _infoHash));
 
         /* Return metadata. */
         return _getMetadata(dataId);
